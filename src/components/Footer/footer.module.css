@@ -2,7 +2,16 @@
     position: absolute;
     bottom: 0;
     width: 100%;
+    padding: 40px 0px;
+    display: flex;
+    justify-content: center;
 }
+
 div{
     color: white;
+}
+
+.navbar > ul > li > a{
+    color: greenyellow;
+    align-self: flex-end;
 }
