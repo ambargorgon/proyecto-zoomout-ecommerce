@@ -7,13 +7,6 @@
     width: 100%;
 } 
 
-.logo-header, h1{
-    color: greenyellow;
-    width: fit-content;
-    padding: 40px 60px;
-    font-size: 30px;
-}
-
 .ul__navbar{
     display: flex;
     justify-content: flex-end;
@@ -24,4 +17,11 @@
     text-decoration-line: none;
     color: white;
     padding: 5px 10px;
+}
+
+@media(max-width: 500px){
+    .navBar{
+        visibility: hidden;
+        position: absolute;
+    }
 }

@@ -5,4 +5,32 @@
     display: flex;
     justify-content: space-around;
     align-items: center;
+    padding-right:30px;
+}
+
+.logo-header-esc{
+    width: 20%;}
+
+.menu-burger{
+    visibility: hidden;
+}
+
+@media(max-width: 500px){
+    .header{
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .logo-header-esc{
+        width: 40%;
+    }
+
+    .cartWidget{
+        align-self: flex-end;
+        width: 5%;
+    }
+    .menu-burger{
+        visibility: visible;
+        font-size: 10px;
+    }
 }

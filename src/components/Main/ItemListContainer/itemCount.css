@@ -1,0 +1,39 @@
+.counter-add{
+    margin-left: 46%;
+    border: 1px white solid;
+    border-radius: 20px;
+    width: 140px;
+    padding: 10px;
+}
+ 
+.counter-container{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.button{
+    background-color: greenyellow;
+    color: black;
+    border-radius: 20px;
+    cursor: pointer;
+    width: 30px;
+    font-weight: bold;
+    margin: 0 4px;
+}
+
+.button:disabled, .button-add:disabled{
+    background-color: rgba(131, 195, 34, 0.621);
+    transform: none;
+    cursor: auto;
+}
+
+.button-add{
+    background-color: greenyellow;
+    padding: 5px 10px;
+    border-radius: 20px;
+    margin-top: 10px;
+    font-size: 12px;
+    width: 100%;
+    cursor: pointer;
+}
+

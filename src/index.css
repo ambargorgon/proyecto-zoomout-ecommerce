@@ -1,4 +1,9 @@
 * {
   margin: 0;
   background-color: black;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+button{
+  color: black;
+  background-color: white;
 }
