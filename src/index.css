@@ -1,9 +1,21 @@
+@import url('https://fonts.googleapis.com/css2?family=Kanit:wght@200;300;400&display=swap');
+
 * {
   margin: 0;
   background-color: black;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-family: 'Kanit', sans-serif;
 }
+
 button{
   color: black;
   background-color: white;
+}
+
+.footer{
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  padding: 40px 0px;
+  display: flex;
+  justify-content: center;
 }
