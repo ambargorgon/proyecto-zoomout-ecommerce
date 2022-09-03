@@ -1,0 +1,30 @@
+.item-detail-container{
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    margin: 30px auto;
+    border: 1px white solid;
+    align-items: center;
+}
+.item-text{
+    text-align: center;   
+    flex-wrap: wrap;
+}
+
+.item-img{
+    width: 35%;
+}
+
+.item-title{
+    align-self: flex-start;
+    background-color: inherit;
+    white-space: initial;
+    font-size: 25px;
+    margin: 0px auto;
+    width: 180px;
+}
+
+.item-description{
+   width: 60%;
+   margin: 10px auto;
+}

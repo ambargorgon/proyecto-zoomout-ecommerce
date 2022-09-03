@@ -7,7 +7,7 @@ const Header = () => {
   return (
     <header className='header'>
         <h1 className='menu-burger'>menu</h1>
-        <img className='logo-header-esc' src={logoEscrito}/>
+        <img className='logo-header-esc' src={logoEscrito} alt='logo_zout'/>
         <Navbar status={true}/>
     </header>
   )
