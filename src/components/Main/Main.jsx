@@ -1,15 +1,19 @@
-import React from 'react'
-import ItemDetailContainer from './ItemDetailContainer/ItemDetailContainer'
-import ItemListContainer from './ItemListContainer/ItemListContainer'
-import './main.css'
+import React from "react";
+import ItemDetailContainer from "./ItemDetailContainer/ItemDetailContainer";
+import ItemListContainer from "./ItemListContainer/ItemListContainer";
+import "./main.css";
+import { Routes, Route } from "react-router-dom";
 
 const Main = () => {
   return (
     <main>
-        <ItemListContainer />
-        <ItemDetailContainer />
+      <Routes>
+        <Route path="/" element={<ItemListContainer />} />
+        <Route path="/item/:id" element={<ItemDetailContainer />} />
+        <Route path="/category/:id" element={<ItemListContainer />} />
+      </Routes>
     </main>
-  )
-}
+  );
+};
 
-export default Main
+export default Main;

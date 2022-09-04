@@ -1,24 +1,24 @@
 import React, { useEffect, useState } from "react";
 import "../main.css";
-import ItemCount from "./itemCount/ItemCount";
 import ItemList from "./itemList/ItemList";
 import { products } from "../../../mock/products";
 import "./itemListContainer.css";
+import { useParams } from "react-router-dom";
 
 const ItemListContainer = () => {
-  const onAdd = () => {
-    console.log("Agregado al carrito");
-  };
+  const { id } = useParams();
 
   const [loading, setLoading] = useState(true);
   const [items, setItems] = useState([]);
 
   useEffect(() => {
     const getProducts = new Promise((res, rej) => {
+      const filtered = products.filter((item) => item.category === id);
       setTimeout(() => {
-        res(products);
-      }, 3000);
+        res(id ? filtered : products);
+      }, 2000);
     });
+
     getProducts
       .then((result) => {
         setItems(result);
@@ -27,7 +27,7 @@ const ItemListContainer = () => {
         console.log("catch:", error);
       })
       .finally(() => setLoading(false));
-  }, []);
+  }, [id]);
 
   return (
     <div className="itemListContainer">
@@ -36,7 +36,6 @@ const ItemListContainer = () => {
       ) : (
         <>
           <ItemList products={items} />
-          <ItemCount stock={10} initial={0} onAdd={onAdd} />
         </>
       )}
     </div>

@@ -1,18 +1,20 @@
-@import url('https://fonts.googleapis.com/css2?family=Kanit:wght@200;300;400&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Kanit:wght@200;300;400&display=swap");
 
 * {
   margin: 0;
   background-color: black;
-  font-family: 'Kanit', sans-serif;
+  font-family: "Kanit", sans-serif;
+  text-decoration: none;
+  color: white;
 }
 
-button{
+button {
   color: black;
   background-color: white;
 }
 
-.footer{
-  position: absolute;
+.footer {
+  position: fixed;
   bottom: 0;
   width: 100%;
   padding: 40px 0px;
