@@ -35,7 +35,7 @@ export const products = [
     price: 2000,
     img: "https://res.cloudinary.com/drqdadlel/image/upload/v1661900457/zoomout/products/buzo-cara_epjbgt.jpg",
     category: "buzos",
-    stock: 1,
+    stock: 15,
     description:
       "Polar fleece hooded sweater 400g solid color heavyweight loose candy color plus velvet casual ins hoodies",
   },

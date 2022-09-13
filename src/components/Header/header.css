@@ -17,6 +17,11 @@ a > .logo-header-esc {
   visibility: hidden;
 }
 
+.cartWidget{
+  margin:5px 20px 0px 20px;
+
+}
+
 @media (max-width: 500px) {
   .header {
     display: flex;
@@ -31,6 +36,7 @@ a > .logo-header-esc {
     align-self: flex-end;
     width: 5%;
   }
+
   .menu-burger {
     visibility: visible;
     font-size: 10px;
