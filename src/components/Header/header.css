@@ -18,8 +18,13 @@ a > .logo-header-esc {
 }
 
 .cartWidget{
-  margin:5px 20px 0px 20px;
-
+  display: flex;
+}
+.cartWidget > svg{
+  margin:5px 0px 0px 20px;
+}
+.cartWidget > span{
+  font-size: 14px;
 }
 
 @media (max-width: 500px) {
@@ -36,6 +41,7 @@ a > .logo-header-esc {
     align-self: flex-end;
     width: 5%;
   }
+ 
 
   .menu-burger {
     visibility: visible;

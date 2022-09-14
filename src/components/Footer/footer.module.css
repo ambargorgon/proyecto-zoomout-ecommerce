@@ -1,5 +1,6 @@
 .footer{
-    padding: 40px 0px;
+    margin-left: 50%;
+    transform: translateX(-50%);
     display: flex;
     justify-content: center;
 }
@@ -10,5 +11,4 @@ div{
 
 .navbar > ul > li > a{
     color: greenyellow;
-    align-self: flex-end;
 }
