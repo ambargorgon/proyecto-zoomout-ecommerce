@@ -6,7 +6,7 @@ import { useContext } from "react";
 import { CartContext } from "../../../../context/CartContext";
 
 const ItemDetail = ({ item }) => {
-  const { cart, addItem } = useContext(CartContext);
+  const { addItem, cantidadProd} = useContext(CartContext);
 
   const [cantidad, setCantidad] = useState(0);
 
@@ -14,7 +14,9 @@ const ItemDetail = ({ item }) => {
     setCantidad(param);
     addItem(item, param);
   };
-console.log(cart)
+
+  const quantity = cantidadProd(item.id)
+
   return (
     <>
       <div key={item.id} className="item-detail-container">
@@ -27,11 +29,16 @@ console.log(cart)
         <img src={item.img} className="item-img" alt="product-img"></img>
       </div>
       {cantidad === 0 ? (
-        <ItemCount stock={item.stock} initial={0} onAdd={onAdd} />
+        <ItemCount stock={item.stock} initial={quantity} onAdd={onAdd} />
       ) : (
-        <Link to="/cart">
-          <button className="item-button">Ir al Carrito</button>
-        </Link>
+        <>
+          <Link to="/">
+            <button className="item-button">Volver a Inicio</button>
+          </Link>
+          <Link to="/cart">
+            <button className="item-button">Ir al Carrito</button>
+          </Link>
+        </>
       )}
     </>
   );

@@ -45,4 +45,5 @@
   font-size: 15px;
   cursor: pointer;
   width:140px;
-}
+  margin-left: 50%;
+  transform: translateX(-50%);}

@@ -7,14 +7,15 @@
   margin: 30px;
   text-align: center;
   padding: 4px;
-  background-color: white;
+  background-color: white;  
+
 }
 
 .card-img {
   height: 250px;
   object-fit: fill;
   margin: 10px;
-  background-color: inherit;
+  background-color: white;
 }
 
 .card-title,
@@ -22,7 +23,7 @@
 .card-container > a {
   margin-bottom: 5px;
   font-size: 13px;
-  background-color: inherit;
+  background-color: white;
   color: black;
 }
 
