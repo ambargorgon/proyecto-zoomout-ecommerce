@@ -1,30 +1,37 @@
 import React, { useEffect, useState } from "react";
 import "../main.css";
 import ItemList from "./itemList/ItemList";
-import { products } from "../../../mock/products";
+// import { products } from "../../../mock/products";
 import "./itemListContainer.css";
 import { useParams } from "react-router-dom";
+import { collection, getDocs, query, where } from "firebase/firestore";
+import { db } from "../../../firebaseConfig";
 
 const ItemListContainer = () => {
   const { id } = useParams();
-
   const [loading, setLoading] = useState(true);
   const [items, setItems] = useState([]);
 
   useEffect(() => {
-    const getProducts = new Promise((res, rej) => {
-      const filtered = products.filter((item) => item.category === id);
-      setTimeout(() => {
-        res(id ? filtered : products);
-      }, 2000);
-    });
+    const itemCollection = collection(db, "productos");
 
-    getProducts
-      .then((result) => {
-        setItems(result);
+    const categorizar = () => {
+      const q = query(itemCollection, where("category", "==", id));
+      return q;
+    };
+
+    getDocs(id ? categorizar() : itemCollection)
+      .then((res) => {
+        const products = res.docs.map((prod) => {
+          return {
+            id: prod.id,
+            ...prod.data(),
+          };
+        });
+        setItems(products);
       })
-      .catch((error) => {
-        console.log("catch:", error);
+      .catch(() => {
+        console.log("error");
       })
       .finally(() => setLoading(false));
   }, [id]);
