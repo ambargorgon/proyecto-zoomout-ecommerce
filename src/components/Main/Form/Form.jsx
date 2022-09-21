@@ -1,41 +1,82 @@
-import React from 'react'
-import { useState } from 'react';
-import "./form.css"
+import { useState } from "react";
+import { addDoc, collection, serverTimestamp } from "firebase/firestore";
+import "./form.css";
+import { db } from "../../../firebaseConfig";
 
-const Form = () => {
+const Form = ({ cart, precioTotal, clear, mostrarId }) => {
+  const [nombre, setNombre] = useState("");
+  const [apellido, setApellido] = useState("");
+  const [email, setEmail] = useState("");
 
-    const [nombre, setNombre] = useState("");
-    const [apellido, setApellido] = useState("");
-    const [email, setEmail] = useState('');
+  const handleSubmit = (event) => {
+    event.preventDefault();
 
-
-    const handleSubmit = (event) =>{
-        event.preventDefault();
-        console.log(event.target.elements.nombre.value)
+    const order = {
+      buyer: { nombre, apellido, email },
+      items: cart,
+      total: precioTotal(),
+      date: serverTimestamp(),
     };
 
-    const handleChangeNombre = (event) =>{
-        setNombre(event.target.value)
-        console.log(event.target.value)
-    }
+    const ordersCollection = collection(db, "orders");
 
-    const handleChangeApellido = (event) => {
-        setApellido(event.target.value)
+    addDoc(ordersCollection, order).then((res) => {
+      mostrarId(res.id);
+      clear();
+    });
+  };
 
-    }
 
-    const handleChangeEmail = (event) => {
-        setEmail(event.target.value)
-    }
+
+  const handleChangeNombre = (event) => {
+    setNombre(event.target.value);
+  };
+
+  const handleChangeApellido = (event) => {
+    setApellido(event.target.value);
+  };
+
+  const handleChangeEmail = (event) => {
+    setEmail(event.target.value);
+  };
 
   return (
-    <form action='' className='form-container' onSubmit={handleSubmit}>
-        <input type="text" placeholder='Nombre'  name="nombre" value={nombre} onChange={handleChangeNombre}/>
-        <input type="text" placeholder="Apellido" name="apellido" value={apellido} onChange={handleChangeApellido}/>
-        <input type="email" placeholder='E-mail'  name="email" value={email} onChange={handleChangeEmail}/>
-        <button className='form-button'>Enviar</button>
+    <form action="" className="form-container" onSubmit={handleSubmit}>
+      <input
+        type="text"
+        placeholder="Nombre"
+        required
+        name="nombre"
+        value={nombre}
+        onChange={handleChangeNombre}
+      />
+      <input
+        type="text"
+        placeholder="Apellido"
+        required
+        name="apellido"
+        value={apellido}
+        onChange={handleChangeApellido}
+      />
+      <input
+        type="email"
+        placeholder="E-mail"
+        required
+        name="email"
+        value={email}
+        onChange={handleChangeEmail}
+      />
+      <input
+        type="email"
+        placeholder="E-mail"
+        required
+        name="email"
+        value={email}
+        onChange={handleChangeEmail}
+      />
+      <button className="form-button">Enviar</button>
     </form>
-  ) 
-}
+  );
+};
 
-export default Form
+export default Form;
