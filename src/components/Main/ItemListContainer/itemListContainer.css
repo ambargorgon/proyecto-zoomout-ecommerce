@@ -1,9 +1,9 @@
-.itemListContainer {
-  margin-top: 80px;
+#itemList {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
 }
+
 .loader-line {
   width: 200px;
   height: 3px;
@@ -29,6 +29,30 @@
   -webkit-border-radius: 20px;
   -moz-border-radius: 20px;
   border-radius: 20px;
+}
+section {
+  height: 80vh;
+  width: 90vw;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+}
+
+.div-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.div-container > img,
+.div-container > a > button {
+  width: 80vw;
+}
+.div-container > a > button {
+  cursor: pointer;
 }
 
 @keyframes lineAnim {

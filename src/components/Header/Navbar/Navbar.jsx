@@ -2,7 +2,9 @@ import React from "react";
 import CartWidget from "./CartWidget";
 import "./navbar.css";
 import estilos from "../../Footer/footer.module.css";
+import "./widgets.css"
 import { Link } from "react-router-dom";
+import FavWidget from "./FavWidget";
 
 const Navbar = ({ status }) => {
   return (
@@ -16,7 +18,6 @@ const Navbar = ({ status }) => {
                   <Link to="/">
                     <button className="dropbtn">
                       Productos
-                      <i className="fa fa-caret-down"></i>
                     </button>
                   </Link>
                   <div className="dropdown-content">
@@ -26,14 +27,9 @@ const Navbar = ({ status }) => {
                   </div>
                 </div>
               </li>
-              <li className="li__navbar">
-                <a href="https://www.google.com">Nosotros</a>
-              </li>
-              <li className="li__navbar">
-                <a href="https://www.google.com">Contacto</a>
-              </li>
             </ul>
           </nav>
+          <FavWidget/>
           <CartWidget />
         </>
       ) : (

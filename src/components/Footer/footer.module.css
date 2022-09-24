@@ -1,9 +1,9 @@
-.footer{
-    margin-left: 50%;
-    transform: translateX(-50%);
+.footer {
+    width: 100%;
+    padding: 40px 0px;
     display: flex;
     justify-content: center;
-}
+  }  
 
 div{
     color: white;

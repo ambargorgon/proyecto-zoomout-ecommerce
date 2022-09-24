@@ -4,9 +4,12 @@ import ItemCount from "../itemCount/ItemCount";
 import { Link } from "react-router-dom";
 import { useContext } from "react";
 import { CartContext } from "../../../../context/CartContext";
+import { FavContext } from "../../../../context/FavContext";
+import { HiOutlineHeart } from "react-icons/hi";
 
 const ItemDetail = ({ item }) => {
-  const { addItem, cantidadProd} = useContext(CartContext);
+  const { addItem, cantidadProd } = useContext(CartContext);
+  const { addFavorito } = useContext(FavContext)
 
   const [cantidad, setCantidad] = useState(0);
 
@@ -15,32 +18,39 @@ const ItemDetail = ({ item }) => {
     addItem(item, param);
   };
 
-  const quantity = cantidadProd(item.id)
+  const addFav = (item) =>{
+    addFavorito(item)
+  }
+
+  const quantity = cantidadProd(item.id);
 
   return (
-    <>
-      <div key={item.id} className="item-detail-container">
-        <div className="item-text">
+    <div key={item.id} className="item-detail-container">
+      <div className="item-text">
+        <img src={item.img} className="item-img" alt="product-img"></img>
+        <div className="item-info">
+          <button onClick={()=> addFav(item)}><HiOutlineHeart /></button>
           <h1 className="item-title">
             {item.title} ${item.price}
           </h1>
           <h4 className="item-description">{item.description}</h4>
+          <div className="item-buttons">
+            {cantidad === 0 ? (
+              <ItemCount stock={item.stock} initial={quantity} onAdd={onAdd} />
+            ) : (
+              <>
+                <Link to="/">
+                  <button className="item-button">Volver a Inicio</button>
+                </Link>
+                <Link to="/cart">
+                  <button className="item-button">Ir al Carrito</button>
+                </Link>
+              </>
+            )}
+          </div>
         </div>
-        <img src={item.img} className="item-img" alt="product-img"></img>
       </div>
-      {cantidad === 0 ? (
-        <ItemCount stock={item.stock} initial={quantity} onAdd={onAdd} />
-      ) : (
-        <>
-          <Link to="/">
-            <button className="item-button">Volver a Inicio</button>
-          </Link>
-          <Link to="/cart">
-            <button className="item-button">Ir al Carrito</button>
-          </Link>
-        </>
-      )}
-    </>
+    </div>
   );
 };
 

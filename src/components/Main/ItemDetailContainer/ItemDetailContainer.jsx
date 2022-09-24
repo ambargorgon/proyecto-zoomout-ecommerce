@@ -5,6 +5,7 @@ import "./itemDetail/itemDetail.css";
 import { db } from "../../../firebaseConfig";
 import { getDoc, doc, collection } from "firebase/firestore";
 
+
 const ItemDetailContainer = () => {
   const { id } = useParams();
   const [item, setItem] = useState({});
@@ -24,7 +25,7 @@ const ItemDetailContainer = () => {
   }, [id]);
 
   return (
-    <>
+    <div className="item-detail-container">
       {loading ? (
         <div className="loader-line"></div>
       ) : (
@@ -32,7 +33,7 @@ const ItemDetailContainer = () => {
           <ItemDetail item={item} />
         </div>
       )}
-    </>
+    </div>
   );
 };
 

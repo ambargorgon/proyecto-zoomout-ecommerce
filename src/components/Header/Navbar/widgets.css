@@ -1,0 +1,144 @@
+/* The dropdown container */
+.dropdown {
+  float: left;
+  overflow: hidden;
+}
+
+/* Dropdown button */
+.dropdown .dropbtn {
+  font-size: 16px;
+  outline: none;
+  color: white;
+  padding: 10px 12px;
+  background-color: inherit;
+  font-family: inherit; /* Important for vertical align on mobile phones */
+  margin: 0;
+  border-radius: 10px 10px 0px 0px;
+  cursor: pointer;
+}
+
+/* Add a red background color to navbar links on hover */
+.navbar a:hover,
+.dropdown:hover .dropbtn {
+  background-color: greenyellow;
+  color: black;
+}
+
+/* Dropdown content (hidden by default) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  /* min-width: 160px; */
+  z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+  float: none;
+  color: white;
+  padding: 12px 12px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+/* Add a grey background color to dropdown links on hover */
+.dropdown-content a:hover {
+  color: black;
+  background-color: rgba(172, 255, 47, 0.54);
+}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/* ////////////////// */
+
+.favoritos {
+  float: left;
+  overflow: hidden;
+}
+
+.favoritos,
+.white-heart,
+.red-heart {
+  font-size: 16px;
+  outline: none;
+  color: white;
+  padding: 10px 12px;
+  background-color: inherit;
+  font-family: inherit; /* Important for vertical align on mobile phones */
+  margin: 0;
+  border-radius: 10px 10px 0px 0px;
+  cursor: pointer;
+}
+
+.red-heart {
+  display: none;
+}
+
+.favoritos:hover .red-heart {
+  display: block;
+}
+
+.favoritos:hover .white-heart {
+  display: none;
+}
+
+.drop-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  z-index: 1;
+}
+
+.drop-content > div {
+  float: none;
+  color: white;
+  padding: 12px 22px;
+  list-style: none;
+  display: block;
+  text-align: center;
+}
+
+.favs-container:hover {
+  outline: 1px solid white;
+}
+
+/* Show the dropdown menu on hover */
+.favoritos:hover .drop-content {
+  display: block;
+}
+.drop-content {
+  width: 300px;
+  height: fit-content;
+  position: absolute;
+  right: 0;
+}
+
+.favs-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.img-favs {
+  width: 50px;
+  height: 50px;
+}
+
+.h2-favs {
+  font-size: 14px;
+  background-color: inherit;
+}
+
+.favs-container > button {
+  width: 40px;
+  cursor: pointer;
+}
+.favs-container > button:hover {
+  background-color: black;
+  color: white;
+}

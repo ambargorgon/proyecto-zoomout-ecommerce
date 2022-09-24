@@ -3,6 +3,7 @@ import { useContext } from "react";
 import { RiShoppingCartLine } from "react-icons/ri";
 import { Link } from "react-router-dom";
 import { CartContext } from "../../../context/CartContext";
+import "./widgets.css"
 
 const CartWidget = () => {
   const {cantidadCarro } = useContext(CartContext);
