@@ -2,7 +2,7 @@ import React from "react";
 import CartWidget from "./CartWidget";
 import "./navbar.css";
 import estilos from "../../Footer/footer.module.css";
-import "./widgets.css"
+import "./widgets.css";
 import { Link } from "react-router-dom";
 import FavWidget from "./FavWidget";
 
@@ -16,9 +16,7 @@ const Navbar = ({ status }) => {
               <li className="li__navbar">
                 <div className="dropdown">
                   <Link to="/">
-                    <button className="dropbtn">
-                      Productos
-                    </button>
+                    <button className="dropbtn">Productos</button>
                   </Link>
                   <div className="dropdown-content">
                     <Link to="/category/remeras">Remeras</Link>
@@ -27,10 +25,10 @@ const Navbar = ({ status }) => {
                   </div>
                 </div>
               </li>
+                <FavWidget />
+                <CartWidget />
             </ul>
           </nav>
-          <FavWidget/>
-          <CartWidget />
         </>
       ) : (
         <nav className={estilos.navbar}>
@@ -39,10 +37,10 @@ const Navbar = ({ status }) => {
               <Link to="/">Productos</Link>
             </li>
             <li className="li__navbar">
-              <a href="https://www.google.com">Nosotros</a>
+              <a href="https://www.google.com">Instagram</a>
             </li>
             <li className="li__navbar">
-              <a href="https://www.google.com">Contacto</a>
+              <a href="https://www.google.com">Facebook</a>
             </li>
           </ul>
         </nav>

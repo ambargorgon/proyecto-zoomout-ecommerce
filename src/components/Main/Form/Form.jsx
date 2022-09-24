@@ -1,30 +1,24 @@
 import { useContext, useState } from "react";
 import { addDoc, collection, serverTimestamp } from "firebase/firestore";
 import "./form.css";
+import "../Cart/cart.css";
 import { db } from "../../../firebaseConfig";
 import { CartContext } from "../../../context/CartContext";
+import { Link } from "react-router-dom";
 
 const Form = () => {
   const { cart, precioTotal, clear } = useContext(CartContext);
   const [nombre, setNombre] = useState("");
   const [apellido, setApellido] = useState("");
   const [email, setEmail] = useState("");
-  const [emailVer, setEmailVer] = useState("")
 
-  const [compraId, setCompraId] = useState('')
+  const [compraId, setCompraId] = useState("");
 
   const mostrarId = (id) => {
-    setCompraId(id)
-  }
-
-  if(compraId){
-    return <h3 className="mensaje">Gracias por comprar con nosotros, tu id de compra es {compraId}</h3>
-  }
+    setCompraId(id);
+  };
 
   const handleSubmit = (event) => {
-
-    emailVer !== email ? alert("Inserta el mismo mail").event.preventDefault() :
-
     event.preventDefault();
 
     const order = {
@@ -54,13 +48,31 @@ const Form = () => {
     setEmail(event.target.value);
   };
 
-  const handleChangeEmailVerification= (event) => {
-    setEmailVer(event.target.value);
+  if (compraId) {
+    return (
+      <h3 className="mensaje">
+        Gracias por comprar con nosotros, tu id de compra es: {compraId}
+      </h3>
+    );
+  } 
+  
+  if(precioTotal() === 0) {
+    return (
+      <>
+        <h4 className="mensaje">
+          No tienes ningún producto en tu carrito, vuelve al inicio y selecciona
+          alguno
+        </h4>
+        <Link to="/">
+          <button className="home-button">Volver a Inicio</button>
+        </Link>
+      </>
+    );
   }
 
   return (
     <>
-      <h2>Por favor completa con tus datos:</h2>
+      <h2 className="mensaje">Por favor completa con tus datos:</h2>
       <form action="" className="form-container" onSubmit={handleSubmit}>
         <input
           type="text"
@@ -85,14 +97,6 @@ const Form = () => {
           name="email"
           value={email}
           onChange={handleChangeEmail}
-        />
-        <input
-          type="email"
-          placeholder="E-mail Nuevamente"
-          required
-          name="email"
-          value={emailVer}
-          onChange={handleChangeEmailVerification}
         />
         <button className="form-button">Enviar</button>
       </form>

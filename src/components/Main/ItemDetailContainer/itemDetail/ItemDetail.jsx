@@ -5,22 +5,27 @@ import { Link } from "react-router-dom";
 import { useContext } from "react";
 import { CartContext } from "../../../../context/CartContext";
 import { FavContext } from "../../../../context/FavContext";
-import { HiOutlineHeart } from "react-icons/hi";
+import { AiOutlineHeart, AiFillHeart } from "react-icons/ai";
+import { useEffect } from "react";
 
 const ItemDetail = ({ item }) => {
   const { addItem, cantidadProd } = useContext(CartContext);
-  const { addFavorito } = useContext(FavContext)
-
+  const { addFavorito, eliminarItem, favoritos } = useContext(FavContext);
   const [cantidad, setCantidad] = useState(0);
+  const [agregado, setAgregado] = useState(false);
+
+  useEffect(() => {
+    if (favoritos.some((prod) => prod.id === item.id)) {
+      setAgregado(true);
+    } else {
+      setAgregado(false);
+    }
+  }, [favoritos]);
 
   const onAdd = (param) => {
     setCantidad(param);
     addItem(item, param);
   };
-
-  const addFav = (item) =>{
-    addFavorito(item)
-  }
 
   const quantity = cantidadProd(item.id);
 
@@ -29,7 +34,19 @@ const ItemDetail = ({ item }) => {
       <div className="item-text">
         <img src={item.img} className="item-img" alt="product-img"></img>
         <div className="item-info">
-          <button onClick={()=> addFav(item)}><HiOutlineHeart /></button>
+          {agregado ? (
+            <button
+              onClick={() => eliminarItem(item)}
+              className="addFav-button"
+            >
+              <AiFillHeart />
+            </button>
+          ) : (
+            <button onClick={() => addFavorito(item)} className="addFav-button">
+              <AiOutlineHeart />
+            </button>
+          )}
+
           <h1 className="item-title">
             {item.title} ${item.price}
           </h1>
