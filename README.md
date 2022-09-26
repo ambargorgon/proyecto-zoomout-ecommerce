@@ -7,9 +7,9 @@ ___
 
 ## Capturas del proyecto:
 
-![inicio](../ropa-gorgon/src/images/home-%20zoomout.png)
-![stock](../ropa-gorgon/src/images/stock%20-%20zoomout.png)
-![cart](../ropa-gorgon/src/images/cart-zoomout.png)
+![inicio](public/home-%20zoomout.png)
+![stock](public/stock%20-%20zoomout.png)
+![cart](public/cart-zoomout.png)
 ___
 ## Instalacion y configuración:
 (Previamente es necesario tener __node y npm__ instalados globalmente en el equipo).
