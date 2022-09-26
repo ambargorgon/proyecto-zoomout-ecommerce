@@ -1,70 +1,51 @@
-# Getting Started with Create React App
+## Ecommerce Zoomout
+##### Proyecto final curso de React JS 
+___
+### Descripción:
+Tienda virtual de ropa ficticia que simula la actividad de compra de artículos de indumentaria, construída a partir de React JS + Librerías.
+___
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Capturas del proyecto:
 
-## Available Scripts
+![inicio](../ropa-gorgon/src/images/home-%20zoomout.png)
+![stock](../ropa-gorgon/src/images/stock%20-%20zoomout.png)
+![cart](../ropa-gorgon/src/images/cart-zoomout.png)
+___
+## Instalacion y configuración:
+(Previamente es necesario tener __node y npm__ instalados globalmente en el equipo).
 
-In the project directory, you can run:
+- Clonar el repositorio
+```
+git clone https://github.com/ambargorgon/ropa-gorgon.git
+```
 
-### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### ``` En terminal:```
 
-### `npm test`
+- Instalar el entorno:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+```
+npm install
+```
 
-### `npm run build`
+- Iniciar el servidor:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+```
+npm start
+```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Abrir [http://localhost:3000](http://localhost:3000) para ver la aplicación en el navegador.
+___
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Librerías utilizadas:
 
-### `npm run eject`
+- [React Router Dom "^6.3.0"](https://reactrouter.com/en/main) : Permite implementar enrutamiento dinámico en una aplicación web.
+- [React Icons "^4.4.0"](https://react-icons.github.io/react-icons) : Permite incluir íconos en proyectos de React utilizando importaciones de ES6.
+- [Firebase / Firestore "^9.10.0"](https://firebase.google.com/docs) : Permite almacenar y conectar la aplicación a una base de datos NoSQL alojada en la nube. 
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+### Instalación de librerías:
+```
+npm install nombre-de-libreria
+```
+___

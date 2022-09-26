@@ -8,6 +8,7 @@ import { Link } from "react-router-dom";
 
 const Form = () => {
   const { cart, precioTotal, clear } = useContext(CartContext);
+  const [loading, setLoading] = useState(true);
   const [nombre, setNombre] = useState("");
   const [apellido, setApellido] = useState("");
   const [email, setEmail] = useState("");
@@ -19,6 +20,7 @@ const Form = () => {
   };
 
   const handleSubmit = (event) => {
+    setLoading(true);
     event.preventDefault();
 
     const order = {
@@ -33,6 +35,7 @@ const Form = () => {
     addDoc(ordersCollection, order).then((res) => {
       mostrarId(res.id);
       clear();
+      setLoading(false);
     });
   };
 
@@ -50,13 +53,19 @@ const Form = () => {
 
   if (compraId) {
     return (
-      <h3 className="mensaje">
-        Gracias por comprar con nosotros, tu id de compra es: {compraId}
-      </h3>
+      <>
+        {loading ? (
+          <div className="loader-line"></div>
+        ) : (
+          <h3 className="mensaje">
+            Gracias por comprar con nosotros, tu id de compra es: {compraId}
+          </h3>
+        )}
+      </>
     );
-  } 
-  
-  if(precioTotal() === 0) {
+  }
+
+  if (precioTotal() === 0) {
     return (
       <>
         <h4 className="mensaje">
@@ -72,8 +81,24 @@ const Form = () => {
 
   return (
     <>
-      <h2 className="mensaje">Por favor completa con tus datos:</h2>
+      {cart.map((item) => {
+        return (
+          <div className="items-form">
+            <h3>{item.title}</h3>
+            <h3>Cantidad: {item.cantidad}</h3>
+            <h3>Precio: ${item.price * item.cantidad}.-</h3>
+            <h3>Precio Unidad: ${item.price}.-</h3>
+          </div>
+        );
+      })}
+      <div className="form-functions">
+        <Link to="/cart">
+          <button className="back-cart">Volver al Carrito</button>
+        </Link>
+        <h3>Total de la compra: ${precioTotal()}.-</h3>
+      </div>
       <form action="" className="form-container" onSubmit={handleSubmit}>
+        <h2 className="titulo">Por favor completa con tus datos:</h2>
         <input
           type="text"
           placeholder="Nombre"
