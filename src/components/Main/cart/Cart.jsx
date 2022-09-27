@@ -12,7 +12,7 @@ const Cart = () => {
     setTimeout(() => {
       setLoading(false);
     }, 1000);
-  });
+  }, []);
 
   return (
     <div className="cart-container">

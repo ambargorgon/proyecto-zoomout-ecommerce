@@ -20,7 +20,6 @@ const Form = () => {
   };
 
   const handleSubmit = (event) => {
-    setLoading(true);
     event.preventDefault();
 
     const order = {
@@ -35,7 +34,6 @@ const Form = () => {
     addDoc(ordersCollection, order).then((res) => {
       mostrarId(res.id);
       clear();
-      setLoading(false);
     });
   };
 
@@ -52,6 +50,9 @@ const Form = () => {
   };
 
   if (compraId) {
+    setTimeout(() => {
+      setLoading(false);
+    }, 1000);
     return (
       <>
         {loading ? (

@@ -5,7 +5,6 @@ import "./itemDetail/itemDetail.css";
 import { db } from "../../../firebaseConfig";
 import { getDoc, doc, collection } from "firebase/firestore";
 
-
 const ItemDetailContainer = () => {
   const { id } = useParams();
   const [item, setItem] = useState({});
