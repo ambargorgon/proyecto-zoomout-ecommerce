@@ -3,8 +3,8 @@ import ItemDetailContainer from "./ItemDetailContainer/ItemDetailContainer";
 import ItemListContainer from "./ItemListContainer/ItemListContainer";
 import "./main.css";
 import { Routes, Route } from "react-router-dom";
+import Cart from "./Cart/Cart";
 import Form from "./Form/Form";
-import Cart from "./Cart/Cart"
 
 const Main = () => {
   return (
