@@ -15,7 +15,7 @@ const ItemDetail = ({ item }) => {
   const [agregado, setAgregado] = useState(false);
 
   useEffect((item) => {
-    if (favoritos.some((prod) => prod.id === item.id)) {
+    if (favoritos.some((producto) => producto.id === item.id)) {
       setAgregado(true);
     } else {
       setAgregado(false);
