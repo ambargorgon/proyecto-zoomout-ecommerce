@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import { CartContext } from "../../../context/CartContext";
 import "./cart.css";
 
-const Cart = () => {
+export const Cart = () => {
   const { cart, removeItem, clear, precioTotal } = useContext(CartContext);
   const [loading, setLoading] = useState(true);
 
@@ -60,5 +60,3 @@ const Cart = () => {
     </div>
   );
 };
-
-export default Cart;
